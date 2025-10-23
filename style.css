@@ -1,0 +1,217 @@
+   DESIGN SYSTEM
+========================== */
+:root {
+  --color-primary-100: #b8e1d1;
+  --color-primary-300: #2a7f62;
+  --color-primary-500: #1f5e46;
+  --color-secondary-300: #4a90e2;
+  --color-neutral-50: #ffffff;
+  --color-neutral-100: #f8f8f8;
+  --color-neutral-300: #e0e0e0;
+  --color-neutral-900: #111111;
+
+  --font-family-base: 'Inter', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+}
+
+/* ==========================
+   LAYOUT PRINCIPAL
+========================== */
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-900);
+}
+
+header {
+  background: var(--color-primary-300);
+  color: white;
+  padding: var(--space-2);
+}
+
+footer {
+  background: var(--color-neutral-300);
+  text-align: center;
+  padding: var(--space-2);
+}
+
+main {
+  padding: var(--space-3);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-3);
+}
+
+/* ==========================
+   MENU & DROPDOWN
+========================== */
+.main-nav {
+  position: relative;
+}
+
+.main-nav .menu {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav .menu li {
+  position: relative;
+}
+
+.main-nav .menu a {
+  text-decoration: none;
+  color: white;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.main-nav .menu a:hover {
+  background: var(--color-primary-500);
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-primary-300);
+  flex-direction: column;
+  padding: var(--space-2) 0;
+  border-radius: var(--radius-sm);
+  min-width: 160px;
+}
+
+.main-nav .menu li:hover > .submenu {
+  display: flex;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ==========================
+   CARDS
+========================== */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.card {
+  flex: 1 1 calc(33.333% - var(--space-3));
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+}
+
+/* ==========================
+   BOTÕES
+========================== */
+.btn {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-primary-300);
+  color: white;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--color-primary-500);
+}
+
+.btn:focus {
+  outline: 2px dashed var(--color-secondary-300);
+  outline-offset: 3px;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  background: var(--color-neutral-300);
+  cursor: not-allowed;
+}
+
+/* ==========================
+   BADGES
+========================== */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--color-primary-100);
+  color: var(--color-primary-500);
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+}
+
+.badge.secondary {
+  background: var(--color-secondary-300);
+  color: white;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+@media (max-width: 1024px) {
+  .card { flex: 1 1 calc(50% - var(--space-3)); }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .main-nav .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--color-primary-300);
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  .main-nav .menu.show { display: flex; }
+  .submenu { position: relative; background: var(--color-primary-500); }
+  .submenu a { padding-left: var(--space-3); }
+  .card { flex: 1 1 100%; }
+}

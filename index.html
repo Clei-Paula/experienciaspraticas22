@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Plataforma ONG — Projetos, Voluntariado e Doações</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+</body>
+<body>
+
+  <!-- =====================
+       CABEÇALHO / MENU
+       ===================== -->
+  <header>
+    <nav class="main-nav">
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <ul class="menu">
+        <li><a href="#projetos">Projetos</a></li>
+        <li>
+          <a href="#voluntariado">Voluntariado ▾</a>
+          <ul class="submenu">
+            <li><a href="#educacao">Educação</a></li>
+            <li><a href="#saude">Saúde</a></li>
+            <li><a href="#cultura">Cultura</a></li>
+          </ul>
+        </li>
+        <li><a href="#doacoes">Doações</a></li>
+        <li><a href="#transparencia">Transparência</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =====================
+       CONTEÚDO PRINCIPAL
+       ===================== -->
+  <main>
+    <!-- PROJETOS -->
+    <section id="projetos">
+      <h2>Projetos em Destaque</h2>
+      <div class="card-list">
+        <div class="card">
+          <img src="imagens/images.png" alt="Projeto Educação">
+          <h3>Projeto Educação</h3>
+          <p>Oficinas e reforço escolar para crianças.</p>
+          <span class="badge">Educação</span>
+          <button class="btn" data-project="Projeto Educação">Saiba mais</button>
+        </div>
+        <div class="card">
+          <img src="imagens/free-mascara-facial-icon-svg-download-png-1938998.webp" alt="Projeto Saúde">
+          <h3>Projeto Saúde</h3>
+          <p>Campanhas de prevenção e triagem médica.</p>
+          <span class="badge secondary">Saúde</span>
+          <button class="btn" data-project="Projeto Saúde">Saiba mais</button>
+        </div>
+        <div class="card">
+          <img src="imagens/verde.webp" alt="Projeto Verde">
+          <h3>Projeto Verde</h3>
+          <p>Reflorestamento e conscientização ambiental.</p>
+          <span class="badge">Meio Ambiente</span>
+          <button class="btn" data-project="Projeto Verde">Saiba mais</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTARIADO -->
+    <section id="voluntariado">
+      <h2>Participe como Voluntário</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Educação</h3>
+          <p>Auxilie em reforço escolar e oficinas culturais.</p>
+          <button class="btn" data-project="Educação">Quero me voluntariar</button>
+        </div>
+        <div class="card">
+          <h3>Saúde</h3>
+          <p>Participe de campanhas de prevenção e conscientização.</p>
+          <button class="btn" data-project="Saúde">Quero me voluntariar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOAÇÕES -->
+    <section id="doacoes">
+      <h2>Contribua com Nossa Causa</h2>
+      <div class="card">
+        <form id="formDoacao">
+          <label for="valor">Valor da doação:</label>
+          <input type="number" id="valor" name="valor" placeholder="50" required>
+          <button type="submit" class="btn">Doar</button>
+        </form>
+        <div id="donationResult" class="alert success" style="display:none"></div>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO DE VOLUNTARIADO / CADASTRO -->
+    <section id="cadastro-form">
+      <h2>Cadastro — Voluntário / Doador</h2>
+      <div class="card">
+        <form id="formCadastro">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@exemplo.com" required>
+
+          <label for="mensagem">Mensagem / Observações</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como gostaria de ajudar?"></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Enviar</button>
+            <button type="reset" class="btn secondary">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- TRANSPARÊNCIA -->
+    <section id="transparencia">
+      <h2>Transparência</h2>
+      <div class="card">
+        <ul>
+          <li><a href="#">Relatório 2023</a></li>
+          <li><a href="#">Relatório 2024</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <h2>Fale Conosco</h2>
+      <div class="card">
+        <p>Email: contato@plataformaong.org</p>
+        <p>Telefone: (11) 99999-9999</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================
+       RODAPÉ
+       ===================== -->
+  <footer>
+    <p>© 2025 Plataforma ONG — Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- =====================
+       SCRIPT JS EXTERNO
+       ===================== -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
